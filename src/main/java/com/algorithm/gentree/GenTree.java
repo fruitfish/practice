@@ -1,4 +1,4 @@
-package com.algorithm;
+package com.algorithm.gentree;
 
 import java.util.HashMap;
 
@@ -15,6 +15,17 @@ public class GenTree {
 
     }
 
+    /**
+     *
+     * @param preOrder
+     * @param pstart
+     * @param pend
+     * @param inOrder
+     * @param istart
+     * @param iend
+     * @param map  map中存的是 中序遍历数组中， 值 和 index 的关系
+     * @return
+     */
     private TreeNode buildTree(int[] preOrder, int pstart, int pend, int[] inOrder, int istart, int iend, HashMap<Integer, Integer> map) {
         TreeNode node = new TreeNode(preOrder[pstart]);
         if(pstart >= pend || istart >= pend) {
@@ -38,8 +49,4 @@ public class GenTree {
              val = x;
          }
      }
-
-
-
-
 }

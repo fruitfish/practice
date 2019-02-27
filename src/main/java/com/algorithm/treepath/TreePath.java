@@ -1,4 +1,4 @@
-package com.algorithm;
+package com.algorithm.treepath;
 
 import com.alibaba.fastjson.JSON;
 
