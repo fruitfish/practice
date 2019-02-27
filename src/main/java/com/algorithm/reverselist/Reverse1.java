@@ -1,5 +1,7 @@
 package com.algorithm.reverselist;
 
+import com.algorithm.Node;
+
 /**
  * @ClassName Reverse1  使用递归   链表反转
  * @Description

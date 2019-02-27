@@ -1,4 +1,4 @@
-package com.algorithm.reverselist;
+package com.algorithm;
 
 /**
  * @ClassName Node
