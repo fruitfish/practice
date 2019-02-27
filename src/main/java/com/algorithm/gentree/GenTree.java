@@ -17,23 +17,28 @@ public class GenTree {
 
     /**
      *
-     * @param preOrder
-     * @param pstart
-     * @param pend
-     * @param inOrder
-     * @param istart
-     * @param iend
+     * @param preOrder  先序遍历数组
+     * @param pstart  先序遍历数组第一个元素的位置
+     * @param pend  先序遍历数组最后一个元素的位置
+     * @param inOrder  中序遍历数组
+     * @param istart  中序遍历数组第一个元素的位置
+     * @param iend  中序遍历数组最后一个元素的位置
      * @param map  map中存的是 中序遍历数组中， 值 和 index 的关系
      * @return
      */
     private TreeNode buildTree(int[] preOrder, int pstart, int pend, int[] inOrder, int istart, int iend, HashMap<Integer, Integer> map) {
         TreeNode node = new TreeNode(preOrder[pstart]);
-        if(pstart >= pend || istart >= pend) {
+        if(pstart >= pend || istart >= iend) {
             return null;
         }
         int index = map.get(preOrder[pstart]);
+
+        /**
+         *  因为已经知道了index（根节点在中序遍历数组中的位置）,其实就知道了左子树的个数
+         *  index - istart 就是左子树的个数， 所以左子树的终止点是  pstart + index - istart
+         */
         node.left = buildTree(preOrder, pstart + 1, pstart + index - istart, inOrder, istart, index - 1, map);
-        node.right = buildTree(preOrder, pstart + index - istart, pend, inOrder, index + 1, iend, map);
+        node.right = buildTree(preOrder, pstart + index - istart + 1, pend, inOrder, index + 1, iend, map);
         return node;
     }
 
