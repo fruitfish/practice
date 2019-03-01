@@ -25,7 +25,7 @@ public class Reverse2 {
         // 打印反转前的链表
         Node h = head;
         while (null != h) {
-            System.out.print(h.data + " ");
+            System.out.print(h.val + " ");
             h = h.next;
         }
         // 调用反转方法
@@ -35,7 +35,7 @@ public class Reverse2 {
         System.out.println("\n**************************");
         // 打印反转后的结果
         while (null != head) {
-            System.out.print(head.data + " ");
+            System.out.print(head.val + " ");
             head = head.next;
         }
     }

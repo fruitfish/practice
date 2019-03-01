@@ -8,12 +8,12 @@ package com.algorithm;
  * @Version 1.0
  */
 public class Node {
-    public int data;// 数据域
+    public int val;// 数据域
     public Node next;// 指针域
 
-    public Node(int data) {
+    public Node(int val) {
         // super();
-        this.data = data;
+        this.val = val;
     }
 
 
