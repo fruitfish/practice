@@ -12,6 +12,11 @@ import com.algorithm.Node;
  */
 public class ListSort {
 
+    /**
+     * 拆成两个链表
+     * @param head
+     * @return
+     */
     private static Node[] getTwoNodes(Node head) {
             Node head1 = null;  //  奇数链表
             Node head2 = null;  //  偶数链表
@@ -46,6 +51,11 @@ public class ListSort {
     }
 
 
+    /**
+     * 链表反转
+     * @param head
+     * @return
+     */
     private static Node reverse(Node head) {
         if(head == null) {
             return head;
@@ -63,6 +73,28 @@ public class ListSort {
         return pre;
     }
 
+    /**
+     * 使用递归地方式反转链表
+     * @param head
+     * @return
+     */
+    private static Node reverse2(Node head) {
+        if(head == null || head.next == null) {
+            return head;
+        }
+        Node rehead = reverse2(head.next);
+        head.next.next = head;
+        head.next = null;
+        return rehead;
+    }
+
+
+    /**
+     * 两个有序列表合并
+     * @param head1
+     * @param head2
+     * @return
+     */
     private static Node merge(Node head1, Node head2) {
         if(head1 == null && head2 == null) {
             return null;
@@ -121,13 +153,6 @@ public class ListSort {
             head = head.next;
         }
     }
-
-
-
-
-
-
-
 
 
 }
