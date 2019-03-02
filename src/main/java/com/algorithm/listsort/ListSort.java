@@ -4,63 +4,13 @@ import com.algorithm.Node;
 
 /**
  * 一个链表，奇数位升序，偶数为降序，对该链表排序   时间复杂度o(n)
- * 例如：1 8 3 6 5 7 2 9
+ * 例如：1 8 3 6 5 4 7 2 9
  * 分三步骤
  * 1.  按奇数和偶数，拆成两个链表
  * 2. 偶数的链表进行反转
  * 3. 两个有序链表进行合并
  */
 public class ListSort {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     private static Node[] getTwoNodes(Node head) {
             Node head1 = null;  //  奇数链表
