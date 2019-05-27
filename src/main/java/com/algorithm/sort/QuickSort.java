@@ -23,6 +23,12 @@ public class QuickSort {
     }
 
 
+    /**
+     *
+     * @param a 需要排序的数组
+     * @param l 数组中第一个元素的位置
+     * @param r 数据的长度
+     */
     private static void quickSort(int[] a, int l, int r){
         if(l>=r)
             return;
