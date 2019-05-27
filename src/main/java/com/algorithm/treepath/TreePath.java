@@ -15,6 +15,7 @@ import java.util.List;
 public class TreePath {
 
 
+    /*********************************************************算法一*******************************************************/
     public static List<String> treePaths(TreePath.TreeNode root) {
         List<String> list = new ArrayList<>();
         if (root == null)
@@ -23,7 +24,6 @@ public class TreePath {
         fun(root, sb, list);
         return list;
     }
-
     private static void fun(TreeNode root, StringBuffer sb, List<String> list) {
         sb.append(root.val);
         if (root.children == null) {
@@ -37,6 +37,29 @@ public class TreePath {
             sb.delete(sb.lastIndexOf(">") - 1, sb.length());
         }
     }
+    /*********************************************************算法一*******************************************************/
+
+
+    /*********************************************************算法二*******************************************************/
+    private static List<List<String>> treePaths2(TreePath.TreeNode root) {
+        List<List<String>> list = new ArrayList<>();
+        List<String> l = new ArrayList<>();
+        fun2(root, l, list);
+        return list;
+    }
+
+    private static void fun2(TreeNode root, List<String> l, List<List<String>> list) {
+        l.add(root.val);
+        if(root.children == null) {
+            list.add(new ArrayList<>(l));
+            return;
+        }
+        for (TreeNode treeNode : root.children) {
+            fun2(treeNode, l, list);
+            l.remove(l.size() -1);
+        }
+    }
+    /*********************************************************算法二*******************************************************/
 
     private static class TreeNode {
         TreeNode(String val) {
