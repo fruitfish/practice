@@ -71,8 +71,8 @@ public class Reverse1 {
         if(head == null || head.next == null) {
             return head;
         }
-        Node newHead = reverse3(head.next);
-        head.next.next = head;
+        Node newHead = reverse3(head.next);  //  假设是递归的最后一次，newHead 是链表表尾的节点
+        head.next.next = head;  //  假设是递归的最后一次，倒数第一和倒数第二的位置进行了互换
         head.next = null;
         return newHead;
     }
