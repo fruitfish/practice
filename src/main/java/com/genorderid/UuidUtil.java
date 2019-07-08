@@ -1,6 +1,7 @@
 package com.genorderid;
 
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.UUID;
 
@@ -47,7 +48,7 @@ public class UuidUtil {
      * @return 当前计数.
      */
     protected static short getCount() {
-        synchronized (com.twodfire.util.UuidUtil.class) {
+        synchronized (UuidUtil.class) {
             if (counter < 0) {
                 counter = 0;
             }

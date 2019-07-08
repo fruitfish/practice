@@ -9,7 +9,7 @@ import com.alibaba.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import com.alibaba.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import com.alibaba.rocketmq.common.consumer.ConsumeFromWhere;
 import com.alibaba.rocketmq.common.message.MessageExt;
-import com.twodfire.util.HessianUtil;
+
 
 import java.io.IOException;
 import java.util.List;
@@ -48,13 +48,15 @@ public class RocketmqConsumer {
 
                 MessageExt msg = msgs.get(0);
                 msg.getMsgId();
-                try {
-                    Object O = HessianUtil.deserialize(msg.getBody());
-                    System.out.println(O.toString());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    return null;
-                }
+
+                // hession序列化注释掉
+//                try {
+//                    Object O = HessianUtil.deserialize(msg.getBody());
+//                    System.out.println(O.toString());
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                    return null;
+//                }
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
         });
